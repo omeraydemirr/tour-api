@@ -46,4 +46,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## License
-[GNU 3.0](https://github.com/omercanaydemir/driver-upgrade/blob/69707a7d86dfe726f174ddd304af5a6daa102dd0/LICENSE)
+[GNU 3.0](https://github.com/omeraydemirr/tour-api/blob/c2638bb33e018fab441d078f2a95d4baab905b64/LICENSE)
