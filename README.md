@@ -40,10 +40,5 @@ docker compose up
 
 ![View Tours](./react/tour-app/src/gitImages/viewtour.png)
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
 ## License
 [GNU 3.0](https://github.com/omeraydemirr/tour-api/blob/c2638bb33e018fab441d078f2a95d4baab905b64/LICENSE)
