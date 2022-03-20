@@ -18,7 +18,7 @@ This sample API service, built on Django and React, is for managing tour operato
 
 ## Installation
 
-Use the package manager [docker](https://docs.docker.com/engine/install) to install foobar.
+Use the package manager [docker](https://docs.docker.com/engine/install) to install:
 
 ```bash
 docker compose up
