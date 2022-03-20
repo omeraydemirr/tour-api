@@ -1,0 +1,66 @@
+version: "3.2"
+services:
+  # redis:
+  #   restart: always
+  #   image: redis:5
+  #   ports:
+  #     - "6379:6379"
+  #   networks:
+  #     - db-net
+
+  db:
+    restart: always
+    image: mariadb:5.5
+    expose: 
+      - 3302
+      - 3306 
+    environment:
+      - MYSQL_HOST=localhost
+      - MYSQL_PORT=3306
+      - MYSQL_ROOT_HOST=%
+      - MYSQL_DATABASE=mysql
+      - MYSQL_USER=omer
+      - MYSQL_PASSWORD=omer1905
+      - MYSQL_ROOT_PASSWORD=180096
+    ports:
+      - "3302:3306"
+    networks:
+      - db-net
+
+  django:
+    restart: always
+    container_name: code
+    command : bash -c "python check_db.py --service-name db --ip db --port 3306 &&
+                      python manage.py migrate &&
+                      python manage.py runserver 0.0.0.0:8000"
+    # env_file:
+    #   - ./django/settings.ini
+    build:
+      context: './django/tour/'
+      dockerfile: 'Dockerfile'
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      # - redis
+    networks:
+      - db-net
+
+  react:
+    restart: always
+    command : npm start
+    container_name: front
+    build:
+      context: './react/tour-app/'
+      dockerfile: 'Dockerfile'
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    depends_on:
+      - django
+    networks:
+      - db-net
+
+networks:
+  db-net:
+    driver: bridge
