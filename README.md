@@ -7,7 +7,7 @@
 
 # About
 
-This sample API service, built on Django and React, is for managing tour operators. It allows you to create users, create or edit tours.
+This sample API service, built on Django and React, is for managing tour reservations. It allows you to create users, create or edit tours.
 
 ## Tools and Technologies
 
